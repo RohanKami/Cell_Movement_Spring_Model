@@ -507,26 +507,6 @@ while t < T_Max:
                                                                 alpha * (n_y - m_y - (original_n_y - original_m_y)) * dt +
                                                                 delta_n * (original_hat_y_y - (original_next_n_y - original_n_y) - (original_prev_n_y - original_n_y) + (original_n_y - original_prev_n_y)) * dt)
 
-    # Apply Lennard-Jones forces to prevent collisions using vectorized operations
-    
-    # for cell_number in range(1, Cell_Amount + 1):
-    #     for i in range(1, Node_Amount + 1):
-    #         m_x = Cell_Membrane_Coordinates[0][cell_number][i]
-    #         m_y = Cell_Membrane_Coordinates[1][cell_number][i]
-
-    #         for other_cell_number in range(1, Cell_Amount + 1):
-    #             if other_cell_number != cell_number:
-    #                 for j in range(1, Node_Amount + 1):
-    #                     other_m_x = Cell_Membrane_Coordinates[0][other_cell_number][j]
-    #                     other_m_y = Cell_Membrane_Coordinates[1][other_cell_number][j]
-
-    #                     fx, fy = calculate_lj_force(m_x, m_y, other_m_x, other_m_y, epsilon, sigma)
-
-    #                     Cell_Membrane_Coordinates[0][cell_number][i] += fx * dt
-    #                     Cell_Membrane_Coordinates[1][cell_number][i] += fy * dt
-
-    #                     Cell_Membrane_Coordinates[0][other_cell_number][j] -= fx * dt
-    #                     Cell_Membrane_Coordinates[1][other_cell_number][j] -= fy * dt
 
     t += dt
 
